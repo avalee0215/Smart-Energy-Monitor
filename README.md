@@ -1,63 +1,76 @@
-![Header Image](https://github.com/ee209-2020class/ee209-2020class.github.io/blob/master/ExtraInfo/logo.png)
+# Smart Energy Monitor – Embedded Systems Project
 
-# ELECTENG 209 Project Repository
+This repository contains the final version of my **Smart Energy Monitor**, developed in 2024 as part of the **ELECTENG 209** course at the University of Auckland.
 
-This is a repository to be used by all team members to store your ELECTENG 209 project files.
-> [!IMPORTANT]
-> Use this repository to store all of your project work, including your LTspice models, PCB design, firmware written with Atmel Studio, Proteus simulations, etc.
+>  _This project was originally submitted in Semester 2, 2024.  
+> The code and documentation have now been archived in this repository for portfolio and learning reference purposes._
 
-You may create as many folders and files as you wish.
+---
 
-To get started, you should:
-1. Decide whether your team wishes to use the [advanced structure](./Advanced/) or the [basic structure](./Basic/).
-2. Delete the folder that you choose *not* to use.
-3. Move the inner folders (excluding the `README.md` file in the chosen `Basic/` or `Advanced/` folder) of your chosen structure to the top-level of the repository.
-4. Delete the empty `Basic/` or `Advanced/` folder together with its `README.md` file.
+## Project Overview
 
-## 🗃 Project Management
+The Smart Energy Monitor is an embedded system that measures real-time voltage, current, and power across a connected load.  
+It was designed and implemented using the **ATmega328P microcontroller**, with software developed in **C using Atmel Studio**, and circuit simulations in **Proteus** and **LTspice**.
 
-A variety of GitHub project management templates have been provided to you, which you may choose to use:
+---
 
-| GitHub Feature                                                          | Potential Application                                                                                                        |
-| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| [**Projects**](https://github.com/orgs/uoa-ece209/projects/3?pane=info) | To get a big-picture view of all the tasks within your project, and their statuses.                                          |
-| [**Issues**](../../issues)                                              | To track each individual project task.                                                                                       |
-| [**Wikis**](../../wiki)                                                 | To store your team contract, meeting agendas/minutes, team logbooks, theoretical calculations, technical documentation, etc. |
-| [**Pull Requests**](../../pulls)                                        | To review new changes as a team before they are merged into `main`.                                                          |
+##  Key Features
 
-- Refer to [`CONTRIBUTING.md`](./.github/CONTRIBUTING.md) for a suggested possible workflow using these features.
-- You may also consult the TAs for further advice and guidance.
-- See [**❔ Extra Help**](#-extra-help) for places to find extra help.
+-  **Voltage & Current Measurement**  
+  - Measures Vrms and Ipeak values
+  - Signal conditioning via voltage dividers and current sense resistors
+  - Uses 10-bit ADC with 5V reference
 
-> [!NOTE]
-> You are not limited to just these.  
-> You may use hard-copy logbooks instead of digital tools.
+-  **LCD Display Output**  
+  - Scrolls between voltage, current, and power readings every 1 second
 
-## 🎯 Design Specifications
+-  **Real-Time Signal Sampling**  
+  - ADC sampling rate at 10 kHz  
+  - UART transmission at 9600 baud (8N1, no parity)
 
-| Parameter                        | Value                                       |
-| -------------------------------- | ------------------------------------------- |
-| Source Voltage                   | 14 VRMS ± 10%                               |
-| Source Frequency                 | 500 Hz ± 2%                                 |
-| Load Range                       | 2.5 VA to 7.5 VA                            |
-| Load Power Factor                | 0.6 to 0.99                                 |
-| Measurement Accuracy             | ±5% of full-scale reading                   |
-| ADC Conversion Rate              | 10 kHz or slower                            |
-| MCU System Clock                 | 2 MHz                                       |
-| LCD Display Information          | Voltage (Vrms), Current (mApeak), Power (W) |
-| LCD Scroll Rate                  | 1 s                                         |
-| UART Specifications              | 9600 Baud 8N1 with No Parity                |
-| Information Transferred Via UART | Voltage, Peak Current, Power and Energy     |
-| BLE Functionality                | Optional                                    |
-| PCB Size                         | 20000 mm²                                   |
-| PCB Technology                   | Double Layer with PTH                       |
-| Device Technology                | TH or SMT                                   |
+-  **Data Transmission via UART**  
+  - Sends voltage, current, power, and energy data to external serial monitor
 
-## ❔ Extra Help
+-  **PCB Design (Optional)**  
+  - Double-layer PCB layout with PTH, 20000 mm² size limit  
+  - Component technology: TH or SMT (optional BLE module)
 
-For help on using Git and GitHub, you may:
-1. Refer to the **`Getting Started with GitHub`** workshop provided on Canvas
-2. Ask a question on Slack or Ed Discussion
-3. Ask a TA for help
-4. Refer to https://git-scm.com/book/en/v2
-5. Search the internet!
+---
+
+##  Technologies Used
+
+| Component        | Description                     |
+|------------------|---------------------------------|
+| **Microcontroller** | ATmega328P @ 2 MHz           |
+| **Language**     | C (Atmel Studio)                |
+| **Simulation**   | LTspice, Proteus                |
+| **Display**      | 16x2 LCD                        |
+| **Communication**| UART Serial (9600 Baud)         |
+
+---
+
+##  Folder Structure
+
+| Folder           | Contents                                           |
+|------------------|----------------------------------------------------|
+| `firmware/`      | C source code for ATmega328P                       |
+| `ltspice/`       | LTspice simulation files                           |
+| `proteus/`       | Proteus simulation project                         |
+| `pcb/`           | PCB design files (e.g., EasyEDA or Eagle format)   |
+| `docs/`          | Design report, block diagrams, calculations        |
+
+---
+
+##  Background
+
+This project was completed as part of the **ELECTENG 209 course**  
+ *University of Auckland – Semester 2, 2024*  
+ *Project archived to this personal GitHub repository in 2025 for showcase purposes.*
+
+---
+
+## ✉ Contact
+
+For questions or demo requests, feel free to reach out:  
+ Email: avalee0215@gmail.com  
+ GitHub: [@avalee0215](https://github.com/avalee0215)
